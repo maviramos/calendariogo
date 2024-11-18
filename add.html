@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendário de Atividades</title>
+</head>
+<body>
+    <h1>Atividades Agendadas</h1>
+    <a href="/add">Agendar Nova Atividade</a>
+    <ul>
+        {{range .activities}}
+        <li>
+            <strong>{{.Title}}</strong><br>
+            Descrição: {{.Description}}<br>
+            Data: {{.Date.Format "02/01/2006"}}
+        </li>
+        {{else}}
+        <p>Nenhuma atividade agendada.</p>
+        {{end}}
+    </ul>
+</body>
+</html>
